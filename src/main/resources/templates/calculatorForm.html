@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--to powyżej to silnik szbalonów generujacy dokumenty html-->
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+</head>
+<body style="background-color: pink">
+<form action="/calculate">
+    <input name="valueToCalculate" type="text"><br>
+    <button>Oblicz</button>
+</form>
+<hr>
+Wynik:
+<h1 th:text="${result}"></h1>
+Historia:
+<ul>
+    <li th:each="historyElement : ${historyList}">
+        <p th:text="${historyElement}"></p>
+    </li>
+</ul>
+</body>
+</html>
